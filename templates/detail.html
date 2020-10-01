@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content%}
+<div class="container">
+    <div class="row">
+        <h1>detail</h1>
+        <div class="col-12">
+            <p>タイトル：{{object.title}}</p>
+            <p>投稿者：{{object.author}}</p>
+            <p>内容：{{object.content}}</p>
+            <p><img src="{{object.images.url}}" class="w-100" /></p>
+            <a href="{% url 'good' object.pk %}" class=" btn btn-primary">いいね</a>
+            <a href="{% url 'read' object.pk %}" class="btn btn-secondary">きどく</a>
+        </div>
+    </div>
+</div>
+{% endblock content%}

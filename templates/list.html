@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content%}
+<div class="container">
+    <div class="row">
+        <h1>list</h1>
+        {% for item in object_list %}
+        <div class="col-12">
+            <p>タイトル：<a href="{% url 'detail' item.pk%}">{{item.title}}</a></p>
+            <p>投稿者：{{item.author}}</p>
+            <a href="" class="btn btn-primary">いいね{{item.good}}</a>
+            <a href="" class="btn btn-secondary">きどく{{item.read}}</a>
+        </div>
+        {% endfor %}
+        <div class="col-12">
+            <a href="{% url 'logout' %}" class="btn btn-primary">ログアウト</a>
+        </div>
+    </div>
+</div>
+{% endblock content%}
